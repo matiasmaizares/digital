@@ -38,6 +38,7 @@
   color: gainsboro;
 }
 
+/* Al llegar a los 768px cambia a un diseño en columna */
 @media (max-width: 768px) {
   .table thead {
     display: none;

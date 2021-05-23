@@ -7,6 +7,7 @@ const R4 = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
+    //  Obtener la data de la api y guardarla en el state
     const getData = async () => {
       try {
         const info = await axios.get(
@@ -21,7 +22,8 @@ const R4 = () => {
     getData();
   }, []);
 
-  if (!data) return <h1>cargando</h1>;
+  // si no hay data muestra Cargando
+  if (!data) return <h1>Cargando</h1>;
 
   return (
     <div className='table-container'>
@@ -67,6 +69,7 @@ const R4 = () => {
           </tr>
         </thead>
         <tbody className='body'>
+          {/* recore la data y por cada iteracion muesta un tr con los datos */}
           {data.map((d, index) => (
             <tr key={index}>
               <td data-label='Author'>
